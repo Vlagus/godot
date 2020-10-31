@@ -314,8 +314,6 @@ private:
 	PopupMenu *editor_layouts;
 	EditorLayoutsDialog *layout_dialog;
 
-	Ref<ConfigFile> window_config;
-
 	ConfirmationDialog *custom_build_manage_templates;
 	ConfirmationDialog *install_android_build_template;
 	ConfirmationDialog *remove_android_build_template;

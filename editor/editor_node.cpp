@@ -4356,6 +4356,8 @@ void EditorNode::_save_docks_to_config(Ref<ConfigFile> p_layout, const String &p
 }
 
 void EditorNode::_save_window_config() {
+	Ref<ConfigFile> window_config;
+	window_config.instance();
 	window_config->set_value("window", "maximized", OS::get_singleton()->is_window_maximized() || OS::get_singleton()->is_window_fullscreen());
 	// Save the window position relative to the current monitor
 	window_config->set_value("window", "position", OS::get_singleton()->get_window_position() - OS::get_singleton()->get_screen_position());
@@ -4366,6 +4368,7 @@ void EditorNode::_save_window_config() {
 }
 
 void EditorNode::_load_window_config() {
+	Ref<ConfigFile> window_config;
 	window_config.instance();
 	String window_config_path = EditorSettings::get_singleton()->get_window_config();
 
